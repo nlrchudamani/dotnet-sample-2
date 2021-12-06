@@ -5,4 +5,8 @@ node {
     {
         sh" echo 'Hello World'"
     }
+    stages('Check Kubernetes version ')
+    {
+        sh "kubectl version"
+    }
 }
