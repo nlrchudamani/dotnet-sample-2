@@ -9,11 +9,11 @@ pipeline{
     agent any 
     stages{
         
-            stage('Cloning our Git') {
-                steps {
-                    git 'https://github.com/nlrchudamani/dotnet-sample.git'
-                }
-            }
+            // stage('Cloning our Git') {
+            //     steps {
+            //         git 'https://github.com/nlrchudamani/dotnet-sample.git'
+            //     }
+            // }
 
             stage('Building Docker Image') {
                 steps {
