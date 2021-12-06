@@ -9,27 +9,17 @@ pipeline{
     agent any 
     stages{
         
-            // stage('Cloning our Git') {
-            //     steps {
-            //         git 'https://github.com/nlrchudamani/dotnet-sample.git'
-            //     }
-            // }
+           
 
             stage('Building Docker Image') {
                 steps {
-                    script {
-                        dockerImage = docker.build registry + ":$BUILD_NUMBER"
-                    }
+                    sh "docker build -t nlrcmani/dotnet-sample-1:latest ."
                 }
             }
 
             stage('Deploying Docker Image to Dockerhub') {
                 steps {
-                    script {
-                        docker.withRegistry('', registryCredential) {
-                        dockerImage.push()
-                        }
-                    }
+                    sh "docker push nlrcmani/dotnet-sample-1:latest"
                 }
             }
 
