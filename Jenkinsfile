@@ -41,6 +41,11 @@ pipeline{
                   sh "docker rmi --force $registry:$BUILD_NUMBER"
                 }
             }
+            stage('Deploy to cluster') {
+                steps{
+                  sh "kubectl apply ./k8s"
+                }
+            }
     }
     
 
