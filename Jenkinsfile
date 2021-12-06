@@ -11,7 +11,7 @@ pipeline{
         
             stage('Cloning our Git') {
                 steps {
-                    git 'https://github.com/nlrchudamani/node-js-sample.git'
+                    git 'https://github.com/nlrchudamani/dotnet-sample.git'
                 }
             }
 
