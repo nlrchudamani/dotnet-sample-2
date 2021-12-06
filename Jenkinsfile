@@ -8,12 +8,12 @@ pipeline{
     }
     agent any 
     stages{
-        {
-            // stage('Cloning our Git') {
-            //     steps {
-            //         git 'https://github.com/nlrchudamani/node-js-sample.git'
-            //     }
-            // }
+        
+            stage('Cloning our Git') {
+                steps {
+                    git 'https://github.com/nlrchudamani/node-js-sample.git'
+                }
+            }
 
             stage('Building Docker Image') {
                 steps {
