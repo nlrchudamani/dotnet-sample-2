@@ -1,12 +1,11 @@
-node {
 
-    agent any 
-    stages('Testing the pipeline')
-    {
-        sh" echo 'Hello World'"
-    }
-    stages('Check Kubernetes version ')
-    {
-        sh "kubectl version"
-    }
+
+
+stages('Testing the pipeline')
+{
+    sh" echo 'Hello World'"
+}
+stages('Check Kubernetes version ')
+{
+    sh "kubectl version"
 }
