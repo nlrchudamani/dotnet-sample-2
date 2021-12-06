@@ -11,8 +11,8 @@ pipeline{
         
             stage('Cloning our Git') {
                 steps {
-                    script{
-                        git branch 'main' , credentialsId: 'github-token',  url 'https://github.com/nlrchudamani/dotnet-sample.git'
+                    script {
+                        git branch: 'main' , credentialsId: 'github-token',  url: 'https://github.com/nlrchudamani/dotnet-sample.git'
                     }
                     
                 }
