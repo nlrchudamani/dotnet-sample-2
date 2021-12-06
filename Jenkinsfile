@@ -1,15 +1,22 @@
 
 
 pipeline{
+    agent any 
     stages{
         stage('Testing the pipeline')
         {
-            sh" echo 'Hello World'"
+            steps {
+                sh " echo 'Hello World'"
+            }
+            
         }
 
         stage('Check Kubernetes version ')
         {
-            sh "kubectl version"
+            steps{
+                sh "kubectl version"
+            }
+            
         }
     }
     
