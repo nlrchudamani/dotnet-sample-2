@@ -41,6 +41,12 @@ pipeline{
                   sh "docker rmi --force $registry:$BUILD_NUMBER"
                 }
             }
+
+            stage('Update container name'){
+                steps{
+                    sh "kubectl set image deployment/dotnet-first container_name=$registry:$BUILD_NUMBER"
+                }
+            }
             stage('Deploy to cluster') {
                 steps{
                   sh "kubectl apply -f ./k8s-sample"
