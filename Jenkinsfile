@@ -44,7 +44,7 @@ pipeline{
 
             stage('Update container name'){
                 steps{
-                    sh "kubectl set image deployment/dotnet-first container_name=$registry:$BUILD_NUMBER"
+                    sh "kubectl set image deployment/dotnet-first dotnet=$registry:$BUILD_NUMBER"
                 }
             }
             stage('Deploy to cluster') {
