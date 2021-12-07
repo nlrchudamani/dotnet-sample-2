@@ -18,15 +18,7 @@ pipeline{
                 }
             }
 
-            stage('Building workspace') {
-                steps {
-                //    sh "dotnetBuild "
-                    script {
-                        dotnetBuild project:'./Program.cs'
-                    }
-                }
-            }
-
+          
             stage('Building Docker Image') {
                 steps {
                     script {
