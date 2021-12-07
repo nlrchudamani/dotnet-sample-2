@@ -22,7 +22,7 @@ pipeline{
                 steps {
                 //    sh "dotnetBuild "
                     script {
-                        dotnetBuild
+                        dotnetBuild project:'./Program.cs'
                     }
                 }
             }
