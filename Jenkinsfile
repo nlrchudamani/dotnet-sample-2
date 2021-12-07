@@ -42,14 +42,16 @@ pipeline{
                 }
             }
 
-            stage('Update container name'){
-                steps{
-                    sh "kubectl set image deployment/dotnet-first dotnet=$registry:$BUILD_NUMBER"
-                }
-            }
+            
             stage('Deploy to cluster') {
                 steps{
                   sh "kubectl apply -f ./k8s-sample"
+                }
+            }
+
+            stage('Update container name'){
+                steps{
+                    sh "kubectl set image deployment/dotnet-first dotnet=$registry:$BUILD_NUMBER"
                 }
             }
     }
