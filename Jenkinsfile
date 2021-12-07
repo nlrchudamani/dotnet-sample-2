@@ -20,7 +20,10 @@ pipeline{
 
             stage('Building workspace') {
                 steps {
-                   sh "dotnet build"
+                //    sh "dotnetBuild "
+                    script {
+                        dotnetBuild
+                    }
                 }
             }
 
