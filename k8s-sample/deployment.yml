@@ -17,9 +17,7 @@ spec:
           image: nlrcmani/dotnet-sample-1
           ports:
             - containerPort: 5000
-          env:
-            - name: PORT
-              value: "5000"
+          
 ---
 apiVersion: v1
 kind: Service
