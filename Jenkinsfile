@@ -18,6 +18,12 @@ pipeline{
                 }
             }
 
+            stage('Building workspace') {
+                steps {
+                   sh "dotnet build"
+                }
+            }
+
             stage('Building Docker Image') {
                 steps {
                     script {
