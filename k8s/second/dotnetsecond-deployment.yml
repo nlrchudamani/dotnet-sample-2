@@ -5,7 +5,7 @@ kind: Service
 metadata:
   name: dotnet-second-deployment
 spec:
-  type: ClusterIP
+
   selector:
     component: web
   ports:
