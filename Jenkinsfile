@@ -46,7 +46,8 @@ pipeline{
             
             stage('Deploy to cluster') {
                 steps{
-                  sh "kubectl apply -f ./k8s-sample"
+                  sh "kubectl apply -f ./k8s"
+                //   sh "kubectl apply -f ./k8s-sample"
                 }
             }
 
