@@ -46,7 +46,7 @@ pipeline{
             
             stage('Deploy to cluster') {
                 steps{
-                  sh "kubectl apply -f ./k8s"
+                  sh "kubectl apply -f ./k8s/second --namespace=dotnet-sample"
                 //   sh "kubectl apply -f ./k8s-sample"
                 }
             }
