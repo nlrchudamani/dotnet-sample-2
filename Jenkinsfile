@@ -2,7 +2,7 @@
 
 pipeline{
     environment {
-        registry = "nlrcmani/dotnet-sample-1"
+        registry = "nlrcmani/dotnet-sample-2"
         registryCredential = 'docker-credentials'
         dockerImage = ''
     }
@@ -12,7 +12,7 @@ pipeline{
             stage('Cloning our Git') {
                 steps {
                     script {
-                        git branch: 'main' , credentialsId: 'github-user',  url: 'https://github.com/nlrchudamani/dotnet-sample.git'
+                        git branch: 'main' , credentialsId: 'github-user',  url: 'https://github.com/nlrchudamani/dotnet-sample-2.git'
                     }
                     
                 }
@@ -53,7 +53,7 @@ pipeline{
 
             stage('Update container name'){
                 steps{
-                    sh "kubectl set image deployment/dotnet-first-deployment dotnet=$registry:$BUILD_NUMBER"
+                    sh "kubectl set image deployment/dotnet-second-deployment dotnet=$registry:$BUILD_NUMBER"
                 }
             }
     }
