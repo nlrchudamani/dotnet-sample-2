@@ -17,5 +17,5 @@ spec:
              servicePort: 5000
          - path: /app2
            backend:
-              serviceName: server-cluster-ip-service
+              serviceName: dotnet-second-deployment
               servicePort: 5000
