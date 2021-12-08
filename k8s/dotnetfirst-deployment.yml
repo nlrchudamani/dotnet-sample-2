@@ -5,10 +5,10 @@ kind: Service
 metadata:
   name: dotnet-first-deployment
 spec:
-  type: ClusterIP
+ 
   selector:
     component: web
   ports:
   - port: 5000
-    targetPort: 5000
+
     
