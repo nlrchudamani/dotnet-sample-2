@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: nginx.ingress.kubernetes.io/v1beta1
 
 kind: Ingress
 metadata:
@@ -7,7 +7,7 @@ metadata:
     kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: / $2
+    nginx.ingress.kubernetes.io/rewrite-target: / 
 spec:
   rules:
     - http:
