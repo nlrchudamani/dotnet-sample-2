@@ -43,6 +43,13 @@ pipeline{
                 }
             }
 
+            stage('Apply ingress changes') {
+                steps{
+                  sh "kubectl apply -f ./k8s/ingress.yml --namespace=dotnet-sample"
+                //   sh "kubectl apply -f ./k8s-sample"
+                }
+            }
+
             
             stage('Deploy to cluster') {
                 steps{
