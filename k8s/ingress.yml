@@ -1,4 +1,4 @@
-apiVersion: nginx.ingress.kubernetes.io/v1beta1
+apiVersion: nginx.ingress.kubernetes.io/v1
 
 kind: Ingress
 metadata:
