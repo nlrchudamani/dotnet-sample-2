@@ -14,9 +14,13 @@ spec:
        paths:
          - path: /app1
            backend:
-             serviceName: dotnet-first-deployment
-             servicePort: 5000
+             service: 
+                name: dotnet-first-deployment
+                port: 5000
+             
          - path: /app2(/|$)(.*)
            backend:
-              serviceName: dotnet-second-deployment
-              servicePort: 5000
+              service: 
+                name: dotnet-second-deployment
+                port: 5000
+             
