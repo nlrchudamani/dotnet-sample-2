@@ -1,10 +1,10 @@
-apiVersion: nginx.ingress.kubernetes.io/v1
+apiVersion: networking.k8s.io/v1
 
 kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    # kubernetes.io/ingress.class: "nginx"
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
     nginx.ingress.kubernetes.io/rewrite-target: / 
@@ -16,7 +16,7 @@ spec:
            backend:
              serviceName: dotnet-first-deployment
              servicePort: 5000
-         - path: /app2
+         - path: /app2(/|$)(.*)
            backend:
               serviceName: dotnet-second-deployment
               servicePort: 5000
