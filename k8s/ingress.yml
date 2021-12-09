@@ -16,11 +16,13 @@ spec:
            backend:
              service: 
                 name: dotnet-first-deployment
-                port: 5000
+                port: 
+                  number: 5000
              
          - path: /app2(/|$)(.*)
            backend:
               service: 
                 name: dotnet-second-deployment
-                port: 5000
+                port: 
+                  number: 5000
              
